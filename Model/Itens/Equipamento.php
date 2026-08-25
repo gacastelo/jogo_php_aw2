@@ -1,12 +1,10 @@
 <?php
-
 class Equipamento extends AbsItem
 {
     private int $vida_max_modifier;
     private int $velocidade_modifier;
     private int $dano_modifier;
     private bool $is_equipped;
-    protected string $tipo;
 
     public function __construct($id, $nome, $tipo, $descricao, $vida_max_modifier, $velocidade_modifier, $dano_modifier ,$is_equipped)
     {

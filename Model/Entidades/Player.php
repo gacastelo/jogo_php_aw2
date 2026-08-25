@@ -1,11 +1,12 @@
 <?php
-
 class Player extends AbsEntity
 {
     private array $equipamento = ["cabeca" => null, "peitoral" => null, "botas" => null, "mao_principal" => null, "mao_secundaria" => null];
     private array $inventario = [];
 
-    public function __construct(string $nome, string $link_imagem)
+    private array $buffs = ["dano" => ["value" => 0, "duration" => 0], "velocidade" => ["value" => 0, "duration" => 0], "chance_esquiva" => ["value" => 0, "duration" => 0]];
+
+    public function __construct(string $nome = "Héroi", string $link_imagem = "default_hero.jpg")
     {
         $this->nome = $nome;
         $this->vida_maxima = 100;
@@ -16,10 +17,9 @@ class Player extends AbsEntity
         $this->link_imagem = $link_imagem;
     }
 
-
     public function guardarItem($item): void
     {
-        $this->inventario[] = $item;
+        $this->inventario[$item->getId()] = $item;
     }
 
     public function useItem($item): void
@@ -65,9 +65,29 @@ class Player extends AbsEntity
             $this->vida_atual += $amount;
         }
     }
-
-    public function consume(Consumivel $consumivel): void
+    public function buff(string $type,int $value, int $duration): void
     {
+        $this->buffs[$type] = ["value" => $value, "duration" => $duration];
+    }
+
+    public function getBuffs(): array
+    {
+        return $this->buffs;
+    }
+
+    public function decreaseBuffDuration(): void
+    {
+        foreach ($this->buffs as $type) {
+            if ($type["duration"] > 0)
+            {
+                $this->buffs[$type]["duration"]--;
+            }
+        }
+    }
+
+    public function consume(string $id): void
+    {
+        $consumivel = $this->inventario[$id];
         $efeito = $consumivel->getEfeito();
         $this->$efeito;
     }
