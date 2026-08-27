@@ -1,5 +1,4 @@
 <?php
-require_once "../AbsModel/AbsEntity.php";
 require_once "../Model/Entidades/Player.php";
 session_start();
 ?>
@@ -14,7 +13,12 @@ session_start();
     <!--TODO: Estaticastica -->
     <main>
         <h1>Derrota</h1>
-        <button>Menu</button>
+        <button id="menu-button" onclick="goToMenu()">Menu</button>
     </main>
+    <script>
+        function goToMenu(){
+            window.location.href = "../public/index.php"
+        }
+    </script>
 </body>
 </html>
