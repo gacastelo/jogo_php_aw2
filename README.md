@@ -9,7 +9,7 @@ Em um mundo com estética medieval.
 **Escopo:**
 O personagem principal, Arthur, irá iniciar sua missão após ter um diálogo com o chefe da Guilda, onde terá que ir atrás da flor Cinder lótus. O herói irá passar por alguns desafios e cenários que demonstram sua longa jornada até chegar à montanha Hunemberg onde a flor está localizada. O herói termina sua missão após pegar a flor e levá-la de volta a guilda onde irá se tornar um cavaleiro.
 
-**Lore:**
+**História:**
 Arthur quer ser um grande cavaleiro e quer iniciar seu treinamento em uma guilda prestigiada "Legião do Aço", mas para isso ele precisa passar pelo teste de iniciação da Guilda. O teste consiste em trazer uma rara flor,  Cinder lótus. Parece uma tarefa simples mas essa flor está localizada nas montanhas mais altas de Hunemberg, e nosso aspirante a cavaleiro precisara enfrentar diversos desafios para alcançar seu sonho e iniciar na prestigiada guilda para começar sua carreira como cavaleiro.
 
 
@@ -37,6 +37,7 @@ Durante o desenvolvimento do projeto, foram aplicados conceitos de:
 * JavaScript
 * HTML
 * CSS
+* IA Generativa(para JS)
 
 ## Disciplina
 
