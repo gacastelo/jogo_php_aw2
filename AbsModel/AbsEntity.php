@@ -19,6 +19,11 @@ class AbsEntity
         return $this->$atribute;
     }
 
+    public function getVelocidade(): int
+    {
+        return $this->velocidade;
+    }
+
     public function getAtributes(): array
     {
         return get_object_vars($this);
